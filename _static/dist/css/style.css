@@ -1,26 +1,51 @@
+:root {
+  --gradinet: linear-gradient(
+    45deg,
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f9f871
+  );
+}
+
 * {
   outline: 0;
   margin: 0;
   padding: 0;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-}
-
 body {
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
+  overflow: hidden;
 }
 
-canvas {
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background: var(--gradinet);
+  animation: bg_gradient 10s infinite alternate;
+  background-size: 400%;
+}
+.container .ball {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: var(--gradinet);
+  transition: 5s;
+  border-radius: 30% 70% 54% 46%/30% 48% 52% 70%;
+  filter: blur(20px);
 }
 
-h1 {
-  color: pink;
+@keyframes bg_gradient {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 /*# sourceMappingURL=style.css.map */

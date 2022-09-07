@@ -16,7 +16,7 @@ class App {
 
     this.pixelRatio = (window.devicePixelRatio > 1) ? 2 : 1;
 
-    this.totalParticles = 1;
+    this.totalParticles = 100;
     this.totalParticles = [];
     this.maxRadius = 90;
     this.minRadius = 40;
@@ -53,7 +53,7 @@ class App {
       );
 
       if (++curColor >= COLORS.length) {
-        curColor - 0;
+        curColor = 0;
       }
 
       this.particles[i] = item;
@@ -62,7 +62,6 @@ class App {
 
   animate() {
     window.requestAnimationFrame(this.animate.bind(this));
-
     this.ctx.clearRect(0,0, this.stageWidth, this.stageHeight);
 
     for (let i = 0; i < this.totalParticles; i++) {
