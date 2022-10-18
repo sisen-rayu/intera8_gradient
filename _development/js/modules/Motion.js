@@ -20,6 +20,9 @@ export default class Motion {
     )
 
     //stagger(蹌踉めく,スターガー)
+    //アニメーションだけを使ってintersection obserberでつくる
+    //南さんが作ったintersection obserberをはvelocityに依存しているから
+    //motionに置き換える
     this.bind();
   }
 
