@@ -17,9 +17,57 @@
 }
 
 body {
-  overflow: hidden;
+  background-color: #222222;
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
+.loading_text {
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: antiquewhite;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.spinner {
+  position: relative;
+  background-color: pink;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: conic-gradient(pink, transparent);
+  animation: rotate 1.5s linear infinite;
+}
+.spinner::before, .spinner::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+.spinner::before {
+  width: 80px;
+  height: 80px;
+  top: 10px;
+  left: 10px;
+  background-color: #222;
+}
+.spinner::after {
+  height: 10px;
+  width: 10px;
+  background-color: pink;
+  top: 0;
+  left: 45px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .container {
   position: absolute;
   top: 0;
